@@ -1,12 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:the_heroes_book/model/hero.dart';
+import 'package:the_heroes_book/ui/page/heroeslist/hero_card.dart';
 import 'package:the_heroes_book/ui/widgets/label_below_icon.dart';
 import 'package:the_heroes_book/ui/widgets/login_background.dart';
 import 'package:the_heroes_book/ui/widgets/profile_title.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:the_heroes_book/utils/uidata.dart';
 
 class HomePage extends StatelessWidget {
   Size deviceSize;
+  TheHero hero = new TheHero("Thor",
+      "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50");
   Widget appBarColumn(BuildContext context) => SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 18.0),
@@ -73,7 +78,7 @@ class HomePage extends StatelessWidget {
         ),
       );
 
-  Widget actionMenuCard() => Padding(
+  Widget actionMenuCard(BuildContext context) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Card(
           elevation: 2.0,
@@ -94,6 +99,9 @@ class HomePage extends StatelessWidget {
                           icon: FontAwesomeIcons.book,
                           label: "Book",
                           circleColor: Colors.brown,
+                          onPressed: () {
+                            Navigator.pushNamed(context, UIData.heroesRoute);
+                          },
                         ),
                         LabelBelowIcon(
                           icon: FontAwesomeIcons.globe,
@@ -101,7 +109,7 @@ class HomePage extends StatelessWidget {
                           circleColor: Colors.indigo,
                         ),
                         LabelBelowIcon(
-                          icon: FontAwesomeIcons.userFriends,
+                          icon: FontAwesomeIcons.users,
                           label: "Friends",
                           circleColor: Colors.amber,
                         ),
@@ -131,7 +139,8 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: deviceSize.height * 0.01,
             ),
-            actionMenuCard(),
+            actionMenuCard(context),
+            HeroCard(hero: hero),
           ],
         ),
       );
