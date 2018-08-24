@@ -25,7 +25,7 @@ class FriendsShowcase extends StatelessWidget {
   //stack 1/3
   Widget showcaseImage(TheHero hero) => AspectRatio(
         aspectRatio: 1.0,
-        child: Image.asset(
+        child: Image.network(
           hero.image,
           fit: BoxFit.cover,
         ),
@@ -35,7 +35,7 @@ class FriendsShowcase extends StatelessWidget {
   Widget showcaseColor() => new Container(
         decoration: BoxDecoration(boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Colors.black.withOpacity(0.8),
+            color: Colors.black.withOpacity(.6),
             blurRadius: 5.0,
           ),
         ]),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:the_heroes_book/ui/page/heroeslist/heroes_list_page.dart';
 import 'package:the_heroes_book/ui/page/home/home_page.dart';
 import 'package:the_heroes_book/utils/uidata.dart';

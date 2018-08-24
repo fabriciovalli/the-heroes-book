@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:the_heroes_book/model/hero.dart';
+import 'package:the_heroes_book/ui/page/herodetails/hero_details_page.dart';
 import 'package:the_heroes_book/ui/widgets/common_divider.dart';
 
 class HeroCard extends StatelessWidget {
@@ -61,25 +62,39 @@ class HeroCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4.0,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Center(
-              child: CircleAvatar(
-                radius: 36.0,
-                backgroundImage: NetworkImage(hero.image),
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (BuildContext context) {
+            return HeroDetailsPage(
+              hero: hero,
+            );
+          }),
+        );
+      },
+      child: Card(
+        elevation: 4.0,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: Center(
+                child: Hero(
+                  tag: hero.name,
+                  child: CircleAvatar(
+                    radius: 36.0,
+                    backgroundImage: NetworkImage(hero.image),
+                  ),
+                ),
               ),
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: heroSummary(),
-          ),
-        ],
+            Expanded(
+              flex: 3,
+              child: heroSummary(),
+            ),
+          ],
+        ),
       ),
     );
   }

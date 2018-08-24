@@ -8,7 +8,7 @@ class UniversesShowcase extends StatelessWidget {
     return new Center(
       child: new Text(
         'Universes: TODO',
-        style: textTheme.title.copyWith(color: Colors.white),
+        style: textTheme.title.copyWith(color: Colors.black),
       ),
     );
   }
