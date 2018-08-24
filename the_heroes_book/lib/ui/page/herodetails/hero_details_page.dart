@@ -84,7 +84,7 @@ class HeroDetailsPage extends StatelessWidget {
           children: <Widget>[
             profileHeader(),
             detailsCard(),
-            HeroShowcase(hero, deviceSize.height / 2 - 50.0),
+            HeroShowcase(hero, deviceSize.height / 6),
           ],
         ),
       );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:the_heroes_book/model/hero.dart';
 import 'package:the_heroes_book/ui/page/herodetails/hero_details_page.dart';
-import 'package:the_heroes_book/ui/widgets/common_divider.dart';
 
 class HeroCard extends StatelessWidget {
   final TheHero hero;

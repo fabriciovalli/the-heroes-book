@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
                   ),
                   ProfileTile(
                     title: "Hi, Fabricio Valli",
-                    subtitle: "Welcome to the Heroes Book",
+                    subtitle: UIData.welcome,
                     textColor: Colors.white,
                   ),
                   IconButton(
@@ -41,9 +41,7 @@ class HomePage extends StatelessWidget {
                       Icons.more_vert,
                       color: Colors.white,
                     ),
-                    onPressed: () {
-                      print("hi");
-                    },
+                    onPressed: () {},
                   )
                 ],
               ),
@@ -68,7 +66,8 @@ class HomePage extends StatelessWidget {
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                        border: InputBorder.none, hintText: "Find your hero"),
+                        border: InputBorder.none,
+                        hintText: UIData.findYourHero),
                   ),
                 ),
                 Icon(Icons.menu),
